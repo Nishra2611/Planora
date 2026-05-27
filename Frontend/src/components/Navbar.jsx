@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import PlanoraLogo from './common/PlanoraLogo';
+import PlanoraLogo from './common/PlanoraLogo.jsx';
 
 const Navbar = () => {
   const navigate = useNavigate();
