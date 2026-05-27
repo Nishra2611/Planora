@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMockApp } from '../hooks/useMockApp';
 import { Eye, EyeOff, Mail, Lock, User, MapPin, Briefcase, Camera, Upload, CheckCircle, ChevronRight, ArrowLeft, ArrowRight, Loader2, Check, Shield, Send } from 'lucide-react';
-import PlanoraLogo from '../components/common/PlanoraLogo';
+import PlanoraLogo from '../components/common/PlanoraLogo.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGoogleLogin } from '@react-oauth/google';
 import Onboarding from '../components/dashboard/Common/Onboarding';
