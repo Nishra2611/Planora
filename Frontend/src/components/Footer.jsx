@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hammer, Linkedin, Twitter, Instagram } from 'lucide-react';
-import PlanoraLogo from './common/PlanoraLogo';
+import PlanoraLogo from './Common/PlanoraLogo.jsx';
 
 const Footer = () => {
     return (
