@@ -6,7 +6,7 @@ import {
     FolderPlus, Package, Palette, FileText, Settings, LogOut, ChevronRight
 } from 'lucide-react';
 import { useMockApp } from '../../hooks/useMockApp';
-import PlanoraLogo from '../common/PlanoraLogo';
+import PlanoraLogo from '../Common/PlanoraLogo.jsx';
 import socket from '../../utils/socket';
 import { motion, AnimatePresence } from 'framer-motion';
 
