@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMockApp } from '../hooks/useMockApp';
 import { Eye, EyeOff, Mail, Lock, User, MapPin, Briefcase, Camera, Upload, CheckCircle, ChevronRight, ArrowLeft, ArrowRight, Loader2, Check, Shield, Send } from 'lucide-react';
-import PlanoraLogo from '../components/common/PlanoraLogo.jsx';
+import PlanoraLogo from '../components/Common/PlanoraLogo.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGoogleLogin } from '@react-oauth/google';
 import Onboarding from '../components/dashboard/Common/Onboarding';
@@ -124,17 +124,17 @@ const Auth = () => {
                 }
 
                 if (data.status === 'incomplete') {
-                    setFormData(prev => ({ 
-                        ...prev, 
-                        userId: data.user.user_id || data.user.id, 
-                        name: data.user.name, 
+                    setFormData(prev => ({
+                        ...prev,
+                        userId: data.user.user_id || data.user.id,
+                        name: data.user.name,
                         email: data.user.email,
                         status: data.user.status,
                         rejection_reason: data.user.rejection_reason
                     }));
                     setAuthState('onboarding');
                 } else if (
-                    data.user?.status?.toLowerCase() === 'pending' && 
+                    data.user?.status?.toLowerCase() === 'pending' &&
                     !['land owner', 'contractor', 'admin', 'bidder'].includes((data.user?.category || '').toLowerCase()) &&
                     !['land owner', 'contractor', 'admin', 'bidder'].includes((data.user?.sub_category || '').toLowerCase())
                 ) {
@@ -289,7 +289,7 @@ const Auth = () => {
         e.preventDefault();
         setLoading(true);
         setError('');
-        
+
         const appealData = new FormData();
         appealData.append('email', formData.email);
         appealData.append('password', formData.password);
@@ -366,17 +366,17 @@ const Auth = () => {
             setAuthUser(data.user);
 
             if (data.status === 'incomplete') {
-                setFormData(prev => ({ 
-                    ...prev, 
-                    userId: data.user.id || data.user.user_id, 
-                    name: data.user.name, 
+                setFormData(prev => ({
+                    ...prev,
+                    userId: data.user.id || data.user.user_id,
+                    name: data.user.name,
                     email: data.user.email,
                     status: data.user.status,
                     rejection_reason: data.user.rejection_reason
                 }));
                 setAuthState('onboarding');
             } else if (
-                data.user?.status?.toLowerCase() === 'pending' && 
+                data.user?.status?.toLowerCase() === 'pending' &&
                 !['land owner', 'contractor', 'admin', 'bidder'].includes((data.user?.category || '').toLowerCase()) &&
                 !['land owner', 'contractor', 'admin', 'bidder'].includes((data.user?.sub_category || '').toLowerCase())
             ) {
@@ -798,9 +798,9 @@ const Auth = () => {
                                     setAuthState('auth');
                                     navigate('/dashboard');
                                 }}
-                                user={{ 
-                                    id: formData.userId, 
-                                    name: formData.name, 
+                                user={{
+                                    id: formData.userId,
+                                    name: formData.name,
                                     role: formData.role,
                                     status: formData.status,
                                     rejection_reason: formData.rejection_reason
