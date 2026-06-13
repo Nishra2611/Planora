@@ -111,7 +111,7 @@ async function storeInDocuments(client, { project_id, uploaded_by, name, file, c
 // Parse allowed origins from environment for production safety
 const allowedOrigins = process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(',')
-    : ['http://localhost:5173', 'http://localhost:3000'];
+    : ['http://localhost:5173', 'http://localhost:3000', 'https://37847dae.planoraa.pages.dev'];
 
 const io = new Server(server, {
     cors: {
